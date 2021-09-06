@@ -24,6 +24,9 @@ export default function App() {
 			currentPrice === ""
 		) {
 			setOutputTxt("");
+		} else if (initialPrice < 0 || quantity < 0 || currentPrice < 0) {
+			output.style.color = "black";
+			setOutputTxt("✋Please enter positive values only!✋");
 		} else if (
 			initialPrice !== "" &&
 			quantity >= 0 &&
@@ -57,11 +60,6 @@ export default function App() {
 			} else {
 				setOutputTxt("");
 			}
-		} else if (quantity < 0) {
-			output.style.color = "black";
-			setOutputTxt(
-				"✋Please enter a positive value for the quantity of stocks✋"
-			);
 		}
 	}
 
